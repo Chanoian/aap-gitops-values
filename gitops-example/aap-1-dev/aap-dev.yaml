@@ -5,8 +5,6 @@ name: aap                              # AAP instance name
 no_log: false                          # true/false — suppress sensitive output in operator logs
 redis_mode: standalone                 # standalone or clustered
 
-admin_password_secret: aap-admin-password           # pre-created k8s secret
-db_fields_encryption_secret: aap-db-fields-encryption  # pre-created k8s secret
 
 route_tls_termination_mechanism: Edge  # Edge, Passthrough, or Reencrypt
 
