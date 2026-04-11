@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aap-1-dev
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: oci://quay.io/achanoia/aap-gateway
+      chart: aap-gateway
+      targetRevision: "1.0.3"
+      helm:
+        valueFiles:
+          - $values/aap-env.yaml
+          - $values/aap-1-dev/aap-dev.yaml
+          - $values/aap-1-dev/namespace/values.yaml
+    - repoURL: https://bitbucket.org/org/aap-gitops-values.git
+      targetRevision: main
+      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: aap-1-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
