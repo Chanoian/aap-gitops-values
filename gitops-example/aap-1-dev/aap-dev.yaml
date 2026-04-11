@@ -29,7 +29,6 @@ hub:
   replicas: 1
 
 database:
-  database_secret: aap-db-secret       # pre-created k8s secret
   postgres_storage_class: ocs-external-storagecluster-ceph-rbd
 
 redis:
