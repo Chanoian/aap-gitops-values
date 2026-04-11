@@ -1,0 +1,20 @@
+# Layer 2 — Instance-specific configuration for aap-1-dev
+# Overrides Layer 1. Overridden by namespace layer.
+
+name: aap            # AAP instance name, e.g. aap-1-dev
+
+
+no_log: false                        # true/false — suppress sensitive output in operator logs
+
+api:
+  replicas: 2                   # e.g. 1
+
+controller:
+  replicas: 2                    # e.g. 1
+
+eda:
+  disabled: false                    # true/false
+  replicas: 1                   # e.g. 1
+
+
+

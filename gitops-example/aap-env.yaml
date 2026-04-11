@@ -1,0 +1,160 @@
+# Layer 1 — Environment resource sizing
+# Applies to all instances in this environment.
+# Values here are overridden by instance and namespace layers.
+# Key name is resource_requirements (not resources) — matches aap-gateway-helm schema.
+
+api:
+  resource_requirements:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 512Mi
+    limits:
+      cpu:     # e.g. 2
+      memory:  # e.g. 2Gi
+
+# Controller has three separate resource blocks — one per pod group.
+controller:
+  web_resource_requirements:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+    limits:
+      cpu:     # e.g. 2
+      memory:  # e.g. 2Gi
+  task_resource_requirements:
+    requests:
+      cpu:     # e.g. 250m
+      memory:  # e.g. 512Mi
+    limits:
+      cpu:     # e.g. 2
+      memory:  # e.g. 2Gi
+  ee_resource_requirements:
+    requests:
+      cpu:     # e.g. 250m
+      memory:  # e.g. 512Mi
+    limits:
+      cpu:     # e.g. 1
+      memory:  # e.g. 1Gi
+
+# EDA resources are per sub-component.
+eda:
+  api:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  activation_worker:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  default_worker:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  event_stream:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  scheduler:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 500m
+        memory:  # e.g. 512Mi
+  ui:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 100m
+        memory:  # e.g. 256Mi
+      limits:
+        cpu:     # e.g. 500m
+        memory:  # e.g. 512Mi
+
+# Hub resources are per sub-component.
+hub:
+  api:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  content:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  web:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  worker:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 250m
+        memory:  # e.g. 512Mi
+      limits:
+        cpu:     # e.g. 1
+        memory:  # e.g. 1Gi
+  resource_manager:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 100m
+        memory:  # e.g. 256Mi
+      limits:
+        cpu:     # e.g. 500m
+        memory:  # e.g. 512Mi
+  redis:
+    resource_requirements:
+      requests:
+        cpu:     # e.g. 100m
+        memory:  # e.g. 256Mi
+      limits:
+        cpu:     # e.g. 500m
+        memory:  # e.g. 512Mi
+
+database:
+  resource_requirements:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+    limits:
+      cpu:     # e.g. 2
+      memory:  # e.g. 2Gi
+  storage_requirements:
+    requests:
+      storage:   # e.g. 20Gi
+
+redis:
+  resource_requirements:
+    requests:
+      cpu:     # e.g. 100m
+      memory:  # e.g. 256Mi
+    limits:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 512Mi

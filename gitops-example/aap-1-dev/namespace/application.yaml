@@ -11,9 +11,9 @@ spec:
       targetRevision: "1.0.3"
       helm:
         valueFiles:
-          - $values/aap-env.yaml
-          - $values/aap-1-dev/aap-dev.yaml
-          - $values/aap-1-dev/namespace/values.yaml
+          - $values/gitops-example/aap-env.yaml
+          - $values/gitops-example/aap-1-dev/aap-dev.yaml
+          - $values/gitops-example/aap-1-dev/namespace/values.yaml
     - repoURL: https://bitbucket.org/org/aap-gitops-values.git
       targetRevision: main
       ref: values

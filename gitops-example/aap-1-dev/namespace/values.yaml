@@ -1,0 +1,5 @@
+# Layer 3 — Namespace-scoped overrides
+# Only these two values belong here.
+
+namespace: aap  # Target namespace, e.g. aap-1-dev
+idle_aap:  false  # true/false — scales down AAP when idle to save resources
