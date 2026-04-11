@@ -1,0 +1,57 @@
+# Layer 1 — Environment resource sizing
+# Applies to all instances in this environment.
+# Values here are overridden by instance and namespace layers.
+
+api:
+  resources:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+    limits:
+      cpu:     # e.g. 1000m
+      memory:  # e.g. 2Gi
+
+controller:
+  resources:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+    limits:
+      cpu:     # e.g. 1000m
+      memory:  # e.g. 2Gi
+
+eda:
+  resources:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+    limits:
+      cpu:     # e.g. 1000m
+      memory:  # e.g. 2Gi
+
+hub:
+  resources:
+    requests:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+    limits:
+      cpu:     # e.g. 1000m
+      memory:  # e.g. 2Gi
+
+database:
+  resources:
+    requests:
+      cpu:     # e.g. 200m
+      memory:  # e.g. 512Mi
+    limits:
+      cpu:     # e.g. 500m
+      memory:  # e.g. 1Gi
+
+redis:
+  resources:
+    requests:
+      cpu:     # e.g. 100m
+      memory:  # e.g. 128Mi
+    limits:
+      cpu:     # e.g. 200m
+      memory:  # e.g. 256Mi
