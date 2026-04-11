@@ -1,20 +1,53 @@
 apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: aap
+  namespace: openshift-gitops
+spec:
+  description: AAP deployments managed via GitOps
+  sourceRepos:
+    - https://github.com/Chanoian/aap-gateway-helm
+    - https://github.com/Chanoian/aap-gitops-values.git
+  destinations:
+    - namespace: aap-*
+      server: https://kubernetes.default.svc
+    - namespace: aap
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argocd-controller-aap
+  namespace: aap
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: admin
+subjects:
+  - kind: ServiceAccount
+    name: openshift-gitops-argocd-application-controller
+    namespace: openshift-gitops
+---
+apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aap-1-dev
-  namespace: argocd
+  name: aap-1
+  namespace: openshift-gitops
 spec:
-  project: default
+  project: aap
   sources:
-    - repoURL: oci://quay.io/achanoia/aap-gateway
-      chart: aap-gateway
-      targetRevision: "1.0.3"
+    - repoURL: https://github.com/Chanoian/aap-gateway-helm
+      path: .
+      targetRevision: main
       helm:
         valueFiles:
           - $values/gitops-example/aap-env.yaml
           - $values/gitops-example/aap-1-dev/aap-dev.yaml
           - $values/gitops-example/aap-1-dev/namespace/values.yaml
-    - repoURL: https://bitbucket.org/org/aap-gitops-values.git
+    - repoURL: https://github.com/Chanoian/aap-gitops-values.git
       targetRevision: main
       ref: values
   destination:

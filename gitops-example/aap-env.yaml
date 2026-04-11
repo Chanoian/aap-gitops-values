@@ -6,155 +6,155 @@
 api:
   resource_requirements:
     requests:
-      cpu:     # e.g. 500m
-      memory:  # e.g. 512Mi
+      cpu: "500m"
+      memory: "512Mi"
     limits:
-      cpu:     # e.g. 2
-      memory:  # e.g. 2Gi
+      cpu: "2"
+      memory: "2Gi"
 
 # Controller has three separate resource blocks — one per pod group.
 controller:
   web_resource_requirements:
     requests:
-      cpu:     # e.g. 500m
-      memory:  # e.g. 1Gi
+      cpu: "500m"
+      memory: "1Gi"
     limits:
-      cpu:     # e.g. 2
-      memory:  # e.g. 2Gi
+      cpu: "2"
+      memory: "2Gi"
   task_resource_requirements:
     requests:
-      cpu:     # e.g. 250m
-      memory:  # e.g. 512Mi
+      cpu: "250m"
+      memory: "512Mi"
     limits:
-      cpu:     # e.g. 2
-      memory:  # e.g. 2Gi
+      cpu: "2"
+      memory: "2Gi"
   ee_resource_requirements:
     requests:
-      cpu:     # e.g. 250m
-      memory:  # e.g. 512Mi
+      cpu: "250m"
+      memory: "512Mi"
     limits:
-      cpu:     # e.g. 1
-      memory:  # e.g. 1Gi
+      cpu: "1"
+      memory: "1Gi"
 
 # EDA resources are per sub-component.
 eda:
   api:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   activation_worker:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   default_worker:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   event_stream:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   scheduler:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 500m
-        memory:  # e.g. 512Mi
+        cpu: "500m"
+        memory: "512Mi"
   ui:
     resource_requirements:
       requests:
-        cpu:     # e.g. 100m
-        memory:  # e.g. 256Mi
+        cpu: "100m"
+        memory: "256Mi"
       limits:
-        cpu:     # e.g. 500m
-        memory:  # e.g. 512Mi
+        cpu: "500m"
+        memory: "512Mi"
 
 # Hub resources are per sub-component.
 hub:
   api:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   content:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   web:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   worker:
     resource_requirements:
       requests:
-        cpu:     # e.g. 250m
-        memory:  # e.g. 512Mi
+        cpu: "250m"
+        memory: "512Mi"
       limits:
-        cpu:     # e.g. 1
-        memory:  # e.g. 1Gi
+        cpu: "1"
+        memory: "1Gi"
   resource_manager:
     resource_requirements:
       requests:
-        cpu:     # e.g. 100m
-        memory:  # e.g. 256Mi
+        cpu: "100m"
+        memory: "256Mi"
       limits:
-        cpu:     # e.g. 500m
-        memory:  # e.g. 512Mi
+        cpu: "500m"
+        memory: "512Mi"
   redis:
     resource_requirements:
       requests:
-        cpu:     # e.g. 100m
-        memory:  # e.g. 256Mi
+        cpu: "100m"
+        memory: "256Mi"
       limits:
-        cpu:     # e.g. 500m
-        memory:  # e.g. 512Mi
+        cpu: "500m"
+        memory: "512Mi"
 
 database:
   resource_requirements:
     requests:
-      cpu:     # e.g. 500m
-      memory:  # e.g. 1Gi
+      cpu: "500m"
+      memory: "1Gi"
     limits:
-      cpu:     # e.g. 2
-      memory:  # e.g. 2Gi
+      cpu: "2"
+      memory: "2Gi"
   storage_requirements:
     requests:
-      storage:   # e.g. 20Gi
+      storage: "20Gi"
 
 redis:
   resource_requirements:
     requests:
-      cpu:     # e.g. 100m
-      memory:  # e.g. 256Mi
+      cpu: "100m"
+      memory: "256Mi"
     limits:
-      cpu:     # e.g. 500m
-      memory:  # e.g. 512Mi
+      cpu: "500m"
+      memory: "512Mi"
