@@ -22,7 +22,7 @@ eda:
   replicas: 1
 
 hub:
-  disabled: false
+  disabled: true
   no_log: false
   replicas: 1
 
